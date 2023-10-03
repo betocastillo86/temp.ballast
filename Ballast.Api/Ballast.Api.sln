@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ballast.Application", "Ball
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ballast.MemorySql", "Ballast.MemorySql\Ballast.MemorySql.csproj", "{EF1E2962-8A2D-4BE9-A333-819F250F9607}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{FCBF3C9D-3B21-4476-80EB-8513469F386C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ballast.Application.Tests", "Ballast.Application.Tests\Ballast.Application.Tests.csproj", "{AB675972-3998-4A65-97D5-5E5CD2506DE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{EF1E2962-8A2D-4BE9-A333-819F250F9607}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF1E2962-8A2D-4BE9-A333-819F250F9607}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF1E2962-8A2D-4BE9-A333-819F250F9607}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB675972-3998-4A65-97D5-5E5CD2506DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB675972-3998-4A65-97D5-5E5CD2506DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB675972-3998-4A65-97D5-5E5CD2506DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB675972-3998-4A65-97D5-5E5CD2506DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AB675972-3998-4A65-97D5-5E5CD2506DE5} = {FCBF3C9D-3B21-4476-80EB-8513469F386C}
 	EndGlobalSection
 EndGlobal
