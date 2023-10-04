@@ -1,6 +1,7 @@
 using Ballast.Application.Users.Commands.RegisterUserCommand;
 using Ballast.Application.Users.Commands.ValidateLoginCommand;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ballast.Api.Controllers;

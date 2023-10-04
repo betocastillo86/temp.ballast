@@ -5,10 +5,12 @@ using Ballast.Application.Products.Commands.UpdateProduct;
 using Ballast.Application.Products.Queries.GetProductDetailById;
 using Ballast.Application.Products.Queries.GetProductList;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ballast.Api.Controllers;
 
+[Authorize]
 [Route("api/products")]
 public class ProductsController : ControllerBase
 {

@@ -1,7 +1,9 @@
+using System.Text;
 using Ballast.Api.Filters;
 using Ballast.Api.Middleware;
 using Ballast.Application;
 using Ballast.MemorySql;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 
 
@@ -18,8 +20,22 @@ try
     builder.Host.UseSerilog();
 
     builder.Services.AddSingleton<Serilog.ILogger>(Log.Logger);
-
-    // Add services to the container.
+    
+    builder.Services.AddAuthentication("Bearer")
+        .AddJwtBearer("Bearer", options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["Jwt:Key"])),
+                ValidateIssuerSigningKey = true,
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidIssuer = builder.Configuration["Jwt:Issuer"]
+            };
+            options.Audience = builder.Configuration["Jwt:Audience"];
+            options.ClaimsIssuer = builder.Configuration["Jwt:Issuer"];
+        });
 
     builder.Services.AddControllers(c =>
     {
