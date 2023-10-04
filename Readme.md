@@ -19,12 +19,12 @@ The project follows a clean architecture pattern with a clear separation of conc
 
 4. **Ballast.MemorySql**:
    - It has the implementation of data repositories using Dapper with SQL Server.
-   - Includes the SQL script necessary for database setup.
+   - Includes the SQL script necessary for database setup. https://github.com/betocastillo86/temp.ballast/blob/main/Ballast.Api/Ballast.MemorySql/database.sql
    - Note: Due to limitations on the Apple M1 architecture, running an in-memory database might not be feasible. Instead, Docker was used for database setup and management.
 
 5. **Ballast.Application.Tests**:
    - Includes unit tests for the application layer, validating the correctness of various functionalities.
-   - Note: Integration tests are not included at this time. However, a Postman collection is provided to facilitate API testing.
+   - Note: Integration tests are not included at this time. However, a Postman collection is provided to facilitate API testing. https://github.com/betocastillo86/temp.ballast/blob/main/Ballast.postman_collection.json
 
 This solution structure ensures a clean separation of concerns and maintainability of the codebase, following best practices in software architecture and design.
 
