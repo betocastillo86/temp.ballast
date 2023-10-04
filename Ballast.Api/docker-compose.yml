@@ -1,0 +1,17 @@
+version: '3'
+services:
+  ballestapi:
+    build:
+      dockerfile: Ballast.Api/Dockerfile
+      context: .
+    environment:
+      - ConnectionStrings:DefaultConnection=${SQL_DB_CONNECTION_STRING}
+    ports:
+      - '5246:80'
+  sqlserver:
+    image: 'mcr.microsoft.com/mssql/server:2017-latest'
+    environment:
+      - 'ACCEPT_EULA=Y'
+      - 'SA_PASSWORD=Temporal1'
+    ports:
+      - '1433:1433'
